@@ -14,6 +14,12 @@ elif [[ "$connection" == "etho" ]]; then
 
 fi
 
+pacstrap /mnt base linux-zen linux-zen-headers linux-firmware git
+
+genfstab /mnt >> /mnt/etc/fstab
+
+arch-chroot /mnt
+
 read -p 'time_zone: ' time_zone
 echo 'for exemple Europe/Kiev'
 
@@ -54,5 +60,4 @@ passwd $user_name
 mkinitcpio -P
 
 printf "\e[1;32mDone! Type exit, umount -a and reboot.\e[0m"
-
 
