@@ -11,36 +11,6 @@ if [[ "$connection" == "wlan" ]]; then
         nmcli dev wifi connect $name_wifi password $password_wifi
 elif [[ "$connection" == "etho" ]]; then
         echo "nice you don't need to startup wifi connection"
- dmutro@Arch  ~   main ±✚  cat ba
-cat: ba: No such file or directory
- ✘ dmutro@Arch  ~   main ±✚  cat base-uefi.sh 
-#!/bin/bash
-
-echo 'please choose your connection etho or wlan'
-
-read -p 'connection: ' connection
-
-if [[ "$connection" == "wlan" ]]; then
-        sudo iw wlan0 scan | grep SSID
-        read -p 'wifi name: ' name_wifi
-        read -p 'password wifi: ' password_wifi
-        nmcli dev wifi connect $name_wifi password $password_wifi
-elif [[ "$connection" == "etho" ]]; then
- dmutro@Arch  ~   main ±✚  nmtui
- dmutro@Arch  ~   main ±✚  cat base-uefi.sh 
-#!/bin/bash
-
-echo 'please choose your connection etho or wlan'
-
-read -p 'connection: ' connection
-
-if [[ "$connection" == "wlan" ]]; then
-        sudo iw wlan0 scan | grep SSID
-        read -p 'wifi name: ' name_wifi
-        read -p 'password wifi: ' password_wifi
-        nmcli dev wifi connect $name_wifi password $password_wifi
-elif [[ "$connection" == "etho" ]]; then
-        echo "nice you don't need to startup wifi connection"
 
 fi
 
@@ -84,3 +54,5 @@ passwd $user_name
 mkinitcpio -P
 
 printf "\e[1;32mDone! Type exit, umount -a and reboot.\e[0m"
+
+
