@@ -1,6 +1,7 @@
 #!/bin/bash
-read -p 'time_zone: ' time_zone
+
 echo 'for exemple Europe/Kiev'
+read -p 'time_zone: ' time_zone
 
 ln -sf /usr/share/zoneinfo/$time_zone /etc/localtime
 hwclock --systohc
