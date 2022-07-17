@@ -1,26 +1,6 @@
 #!/bin/bash
 
 echo 'please choose your connection etho or wlan'
-https://github.com/Dmutro4347/arch-install-script
-read -p 'connection: ' connection
-
-if [[ "$connection" == "wlan" ]]; then
-        sudo iw wlan0 scan | grep SSID
-        read -p 'wifi name: ' name_wifi
-        read -p 'password wifi: ' password_wifi
-        nmcli dev wifi connect $name_wifi password $password_wifi
-elif [[ "$connection" == "etho" ]]; then
-        echo "nice you don't need to startup wifi connection"
-
-fi
-
-read -p 'time_zone: ' time_zone
-echo 'for exemple Europe/Kiev'
-
- ⚡ root@Arch  /home/dmutro   main ±✚  cat base-uefi.sh 
-#!/bin/bash
-
-echo 'please choose your connection etho or wlan'
 
 read -p 'connection: ' connection
 
