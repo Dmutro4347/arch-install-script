@@ -10,7 +10,7 @@ if [[ "$connection" == "wlan" ]]; then
         nmcli dev wifi connect $name_wifi password $password_wifi
 elif [[ "$connection" == "etho" ]]; then
         echo "nice you don't need to startup wifi connection"
-else; then
+else
 	echo "you don't connect to the internet"
 
 fi
@@ -25,6 +25,6 @@ elif [[ "$karnel" == "lts" ]]; then
 	pacstrap /mnt base linux-lts linux-lts-headers linux-firmware git
 fi
 
-genfstab /mnt >> /mnt/etc/fstab
+genfstab /mnt -U >> /mnt/etc/fstab
 
 arch-chroot /mnt
