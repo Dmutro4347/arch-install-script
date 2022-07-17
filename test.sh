@@ -17,12 +17,13 @@ fi
 
 read -p "please choose karnel linux, zen or lts: " karnel
 
-if [[ "$karnel" == "zen"]]; then
+if [[ "$karnel" == "zen" ]]; then
 	pacstrap /mnt base linux-zen linux-zen-headers linux-firmware git
 elif [[ "$karnel" == "linux" ]]; then
 	pacstrap /mnt base linux linux-firmware git
-else [[ "$karnel" == "lts "]]; then
+elif [[ "$karnel" == "lts" ]]; then
 	pacstrap /mnt base linux-lts linux-lts-headers linux-firmware git
+fi
 
 genfstab /mnt >> /mnt/etc/fstab
 
